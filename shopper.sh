@@ -22,7 +22,8 @@ if [[ "$AWS_VERSION" == "aws-cli"* ]]; then
       echo ""
     else
       # missing
-      echo "aws-cli is not installed. Please make sure you have python-pip installed and then run 'pip install aws-cli'"
+      # echo "aws-cli is not installed. Please make sure you have python-pip installed and then run 'pip install aws-cli'"
+      echo ""
       # exit 0;
 fi
 
