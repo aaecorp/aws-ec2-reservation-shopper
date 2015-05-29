@@ -29,7 +29,7 @@ fi
 
 ##### GATHER INPUT
 echo ""
-echo "    What AWS region do you want to search for reservations in? (Enter US-East-1, US-West-2, etc., then press [ENTER]):"
+echo "    What AWS region do you want to search for reservations in? (Enter 1-3 then press [ENTER]):"
 echo "        1. US-East-1"
 echo "        2. US-West-1"
 echo "        3. US-West-2"
@@ -40,7 +40,7 @@ echo "        1. Linux/Unix"
 echo "        2. Windows"
 read ostype
 echo ""
-echo "    What instance type do you want to reserve? (Enter m3.medium, r3.xlarge, etc., then press [ENTER]):"
+echo "    What instance type do you want to reserve? (Enter 1-12 then press [ENTER]):"
 echo "        1. t2.micro"
 echo "        2. t2.small"
 echo "        3. t2.medium"
@@ -55,7 +55,7 @@ echo "        11. r3.xlarge"
 echo "        12. r3.2xlarge"
 read instancetype
 echo ""
-echo "    What reservation type would you like to purchase? (Enter 'No Upfront', 'Partial Upfront' or 'All Upfront' and then press [ENTER]):"
+echo "    What reservation type would you like to purchase? (Enter 1-3 and then press [ENTER]):"
 echo "        1. No Upfront"
 echo "        2. Partial Upfront"
 echo "        3. All Upfront"
