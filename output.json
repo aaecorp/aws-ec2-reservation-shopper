@@ -1,0 +1,84 @@
+{
+    "ReservedInstancesOfferings": [
+        {
+            "OfferingType": "Partial Upfront", 
+            "AvailabilityZone": "us-east-1e", 
+            "InstanceTenancy": "default", 
+            "PricingDetails": [], 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "UsagePrice": 0.0, 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.066, 
+                    "Frequency": "Hourly"
+                }
+            ], 
+            "Marketplace": false, 
+            "CurrencyCode": "USD", 
+            "FixedPrice": 1082.0, 
+            "Duration": 31536000, 
+            "ReservedInstancesOfferingId": "31ee7971-6e03-4109-806d-7ad0445308a1", 
+            "InstanceType": "r3.xlarge"
+        }, 
+        {
+            "OfferingType": "Partial Upfront", 
+            "AvailabilityZone": "us-east-1c", 
+            "InstanceTenancy": "default", 
+            "PricingDetails": [], 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "UsagePrice": 0.0, 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.066, 
+                    "Frequency": "Hourly"
+                }
+            ], 
+            "Marketplace": false, 
+            "CurrencyCode": "USD", 
+            "FixedPrice": 1082.0, 
+            "Duration": 31536000, 
+            "ReservedInstancesOfferingId": "b73f4922-da29-43e3-b239-03054708c5e9", 
+            "InstanceType": "r3.xlarge"
+        }, 
+        {
+            "OfferingType": "Partial Upfront", 
+            "AvailabilityZone": "us-east-1a", 
+            "InstanceTenancy": "default", 
+            "PricingDetails": [], 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "UsagePrice": 0.0, 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.066, 
+                    "Frequency": "Hourly"
+                }
+            ], 
+            "Marketplace": false, 
+            "CurrencyCode": "USD", 
+            "FixedPrice": 1082.0, 
+            "Duration": 31536000, 
+            "ReservedInstancesOfferingId": "1ad4e546-0923-422d-99e5-2f0e6b0fb38b", 
+            "InstanceType": "r3.xlarge"
+        }, 
+        {
+            "OfferingType": "Partial Upfront", 
+            "AvailabilityZone": "us-east-1b", 
+            "InstanceTenancy": "default", 
+            "PricingDetails": [], 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "UsagePrice": 0.0, 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.066, 
+                    "Frequency": "Hourly"
+                }
+            ], 
+            "Marketplace": false, 
+            "CurrencyCode": "USD", 
+            "FixedPrice": 1082.0, 
+            "Duration": 31536000, 
+            "ReservedInstancesOfferingId": "928c2e90-4439-47ff-bc4d-db98dc118218", 
+            "InstanceType": "r3.xlarge"
+        }
+    ]
+}

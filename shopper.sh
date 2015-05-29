@@ -47,12 +47,12 @@ echo "        3. t2.medium"
 echo "        4. m3.medium"
 echo "        5. m3.large"
 echo "        6. m3.xlarge"
-echo "        7. c3.medium"
-echo "        8. c3.large"
-echo "        9. c3.xlarge"
-echo "        10. r3.medium"
-echo "        11. r3.large"
-echo "        12. r3.xlarge"
+echo "        7. c3.large"
+echo "        8. c3.xlarge"
+echo "        9. c3.2xlarge"
+echo "        10. r3.large"
+echo "        11. r3.xlarge"
+echo "        12. r3.2xlarge"
 read instancetype
 echo ""
 echo "    What reservation type would you like to purchase? (Enter 'No Upfront', 'Partial Upfront' or 'All Upfront' and then press [ENTER]):"
@@ -98,17 +98,17 @@ elif [ $instancetype -eq 5 ]; then
 elif [ $instancetype -eq 6 ]; then
     instancetypesel="m3.large"
 elif [ $instancetype -eq 7 ]; then
-    instancetypesel="c3.xlarge"
-elif [ $instancetype -eq 8 ]; then
     instancetypesel="c3.large"
-elif [ $instancetype -eq 9 ]; then
+elif [ $instancetype -eq 8 ]; then
     instancetypesel="c3.xlarge"
+elif [ $instancetype -eq 9 ]; then
+    instancetypesel="c3.2xlarge"
 elif [ $instancetype -eq 10 ]; then
-    instancetypesel="r3.medium"
+    instancetypesel="r3.large"
 elif [ $instancetype -eq 11 ]; then
     instancetypesel="r3.xlarge"
 elif [ $instancetype -eq 12 ]; then
-    instancetypesel="r3.xlarge"
+    instancetypesel="r3.2xlarge"
 fi
 
 if [ $restype -eq 1 ]; then
@@ -119,17 +119,37 @@ elif [ $restype -eq 3 ]; then
     restypesel="All Upfront"
 fi
 
-aws ec2 describe-reserved-instances-offerings --instance-type $instancetypesel --product-description "$ostypesel" --offering-type "$restypesel" --instance-tenancy default --no-include-marketplace --max-duration $lengthsel --output text
+aws ec2 describe-reserved-instances-offerings --instance-type $instancetypesel --product-description "$ostypesel" --offering-type "$restypesel" --instance-tenancy default --no-include-marketplace --max-duration $lengthsel --output json > output.json
+
+fixedprice=`cat output.json | jq -r .ReservedInstancesOfferings[0].FixedPrice`
+
+if [ $restype -eq 1 ]; then
+    # No Upfront
+    usageprice=`cat output.json | jq -r .ReservedInstancesOfferings[0].RecurringCharges[0].Amount`
+elif [ $restype -eq 2 ]; then
+    # Partial Upfront
+    usageprice=`cat output.json | jq -r .ReservedInstancesOfferings[0].RecurringCharges[0].Amount`
+elif [ $restype -eq 3 ]; then
+    # All Upfront
+    usageprice=`cat output.json | jq -r .ReservedInstancesOfferings[0].UsagePrice`
+fi
+
+yearusage=`echo "scale=2; $usageprice*8760" | bc`
+yeartotal=`echo "scale=2; $yearusage+$fixedprice" | bc`
 
 # Show the user these same values
 echo "---------------------------------------------------------";
 echo "   Your EC2 Reservation details are:";
 echo "---------------------------------------------------------";
-echo "     Reservation Region:           $regionsel";
-echo "     Reservation OS Type:          $ostypesel";
-echo "     Reservation Instance Type:    $instancetypesel";
-echo "     Reservation Type:             $restypesel";
-echo "     Reservation Duration (yrs):   $length";
+echo "     Reservation Region:              $regionsel";
+echo "     Reservation OS Type:             $ostypesel";
+echo "     Reservation Instance Type:       $instancetypesel";
+echo "     Reservation Type:                $restypesel";
+echo "     Reservation Duration (yrs):      $length";
+echo "     Fixed Price (to buy):            $ $fixedprice";
+echo "     Usage Price (hourly):            $ $usageprice";
+echo "     Yearly Operation (8760 hrs):     $ $yearusage";
+echo "     Yearly TOTAL:                    $ $yeartotal";
 echo "---------------------------------------------------------";
 
 exit 0;
