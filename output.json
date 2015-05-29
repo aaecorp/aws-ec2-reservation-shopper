@@ -1,83 +1,63 @@
 {
     "ReservedInstancesOfferings": [
         {
-            "OfferingType": "Partial Upfront", 
+            "OfferingType": "All Upfront", 
             "AvailabilityZone": "us-east-1e", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "ProductDescription": "Windows (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [
-                {
-                    "Amount": 0.066, 
-                    "Frequency": "Hourly"
-                }
-            ], 
+            "RecurringCharges": [], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 1082.0, 
+            "FixedPrice": 3218.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "31ee7971-6e03-4109-806d-7ad0445308a1", 
+            "ReservedInstancesOfferingId": "536df3e0-f549-453a-be3f-459cb7767c88", 
             "InstanceType": "r3.xlarge"
         }, 
         {
-            "OfferingType": "Partial Upfront", 
+            "OfferingType": "All Upfront", 
             "AvailabilityZone": "us-east-1c", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "ProductDescription": "Windows (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [
-                {
-                    "Amount": 0.066, 
-                    "Frequency": "Hourly"
-                }
-            ], 
+            "RecurringCharges": [], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 1082.0, 
+            "FixedPrice": 3218.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "b73f4922-da29-43e3-b239-03054708c5e9", 
+            "ReservedInstancesOfferingId": "2141ec86-9c1f-49ec-94a8-54787c77e6cf", 
             "InstanceType": "r3.xlarge"
         }, 
         {
-            "OfferingType": "Partial Upfront", 
+            "OfferingType": "All Upfront", 
             "AvailabilityZone": "us-east-1a", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "ProductDescription": "Windows (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [
-                {
-                    "Amount": 0.066, 
-                    "Frequency": "Hourly"
-                }
-            ], 
+            "RecurringCharges": [], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 1082.0, 
+            "FixedPrice": 3218.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "1ad4e546-0923-422d-99e5-2f0e6b0fb38b", 
+            "ReservedInstancesOfferingId": "db2dd43c-1e4e-476b-8034-d1e699a67f08", 
             "InstanceType": "r3.xlarge"
         }, 
         {
-            "OfferingType": "Partial Upfront", 
+            "OfferingType": "All Upfront", 
             "AvailabilityZone": "us-east-1b", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
+            "ProductDescription": "Windows (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [
-                {
-                    "Amount": 0.066, 
-                    "Frequency": "Hourly"
-                }
-            ], 
+            "RecurringCharges": [], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 1082.0, 
+            "FixedPrice": 3218.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "928c2e90-4439-47ff-bc4d-db98dc118218", 
+            "ReservedInstancesOfferingId": "4bb0a1ed-ce2d-4475-a56e-626d28950ce4", 
             "InstanceType": "r3.xlarge"
         }
     ]

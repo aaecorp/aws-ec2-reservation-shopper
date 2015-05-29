@@ -134,8 +134,10 @@ elif [ $restype -eq 3 ]; then
     usageprice=`cat output.json | jq -r .ReservedInstancesOfferings[0].UsagePrice`
 fi
 
-yearusage=`echo "scale=2; $usageprice*8760" | bc`
-yeartotal=`echo "scale=2; $yearusage+$fixedprice" | bc`
+yearusage=`echo "scale=2;$usageprice*8760" | bc`
+yearusagernd=`awk "BEGIN {printf \"%.2f\n\", $yearusage}"`
+yeartotal=`echo "scale=2;$yearusage+$fixedprice" | bc`
+yeartotalrnd=`awk "BEGIN {printf \"%.2f\n\", $yeartotal}"`
 
 # Show the user these same values
 echo "---------------------------------------------------------";
@@ -148,8 +150,8 @@ echo "     Reservation Type:                $restypesel";
 echo "     Reservation Duration (yrs):      $length";
 echo "     Fixed Price (to buy):            $ $fixedprice";
 echo "     Usage Price (hourly):            $ $usageprice";
-echo "     Yearly Operation (8760 hrs):     $ $yearusage";
-echo "     Yearly TOTAL:                    $ $yeartotal";
+echo "     Yearly Operation (8760 hrs):     $ $yearusagernd";
+echo "     Yearly TOTAL:                    $ $yeartotalrnd";
 echo "---------------------------------------------------------";
 
 exit 0;
