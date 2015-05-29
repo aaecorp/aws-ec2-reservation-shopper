@@ -40,19 +40,18 @@ echo "        1. Linux/Unix"
 echo "        2. Windows"
 read ostype
 echo ""
-echo "    What instance type do you want to reserve? (Enter 1-12 then press [ENTER]):"
-echo "        1. t2.micro"
-echo "        2. t2.small"
-echo "        3. t2.medium"
-echo "        4. m3.medium"
-echo "        5. m3.large"
-echo "        6. m3.xlarge"
-echo "        7. c3.large"
-echo "        8. c3.xlarge"
-echo "        9. c3.2xlarge"
-echo "        10. r3.large"
-echo "        11. r3.xlarge"
-echo "        12. r3.2xlarge"
+echo "    What instance type do you want to reserve? (Enter a type with no spaces then press [ENTER]):"
+echo "    Some examples are:"
+echo "        t2.micro                                     c4.large"
+echo "        t2.small                                     c4.xlarge"
+echo "        t2.medium                                    c4.2xlarge"
+echo "        m3.medium                                    c4.4xlarge"
+echo "        m3.large                                     g2.2xlarge"
+echo "        m3.xlarge                                    g2.4xlarge"
+echo "        c3.large                                     i2.xlarge"
+echo "        c3.xlarge                                    i2.2xlarge"
+echo "        c3.2xlarge                                   d2.xlarge"
+echo "        c3.4xlarge                                   d2.2xlarge"
 read instancetype
 echo ""
 echo "    What reservation type would you like to purchase? (Enter 1-3 and then press [ENTER]):"
@@ -85,32 +84,6 @@ elif [ $length -eq 3 ]; then
     lengthsel="94608000"
 fi
 
-if [ $instancetype -eq 1 ]; then
-    instancetypesel="t2.micro"
-elif [ $instancetype -eq 2 ]; then
-    instancetypesel="t2.small"
-elif [ $instancetype -eq 3 ]; then
-    instancetypesel="t2.medium"
-elif [ $instancetype -eq 4 ]; then
-    instancetypesel="m3.large"
-elif [ $instancetype -eq 5 ]; then
-    instancetypesel="m3.xlarge"
-elif [ $instancetype -eq 6 ]; then
-    instancetypesel="m3.large"
-elif [ $instancetype -eq 7 ]; then
-    instancetypesel="c3.large"
-elif [ $instancetype -eq 8 ]; then
-    instancetypesel="c3.xlarge"
-elif [ $instancetype -eq 9 ]; then
-    instancetypesel="c3.2xlarge"
-elif [ $instancetype -eq 10 ]; then
-    instancetypesel="r3.large"
-elif [ $instancetype -eq 11 ]; then
-    instancetypesel="r3.xlarge"
-elif [ $instancetype -eq 12 ]; then
-    instancetypesel="r3.2xlarge"
-fi
-
 if [ $restype -eq 1 ]; then
     restypesel="No Upfront"
 elif [ $restype -eq 2 ]; then
@@ -119,7 +92,7 @@ elif [ $restype -eq 3 ]; then
     restypesel="All Upfront"
 fi
 
-aws ec2 describe-reserved-instances-offerings --instance-type $instancetypesel --product-description "$ostypesel" --offering-type "$restypesel" --instance-tenancy default --no-include-marketplace --max-duration $lengthsel --output json > output.json
+aws ec2 describe-reserved-instances-offerings --instance-type $instancetype --product-description "$ostypesel" --offering-type "$restypesel" --instance-tenancy default --no-include-marketplace --max-duration $lengthsel --output json > output.json
 
 fixedprice=`cat output.json | jq -r .ReservedInstancesOfferings[0].FixedPrice`
 
@@ -145,12 +118,13 @@ echo "   Your EC2 Reservation details are:";
 echo "---------------------------------------------------------";
 echo "     Reservation Region:              $regionsel";
 echo "     Reservation OS Type:             $ostypesel";
-echo "     Reservation Instance Type:       $instancetypesel";
+echo "     Reservation Instance Type:       $instancetype";
 echo "     Reservation Type:                $restypesel";
 echo "     Reservation Duration (yrs):      $length";
 echo "     Fixed Price (to buy):            $ $fixedprice";
 echo "     Usage Price (hourly):            $ $usageprice";
 echo "     Yearly Operation (8760 hrs):     $ $yearusagernd";
+echo "---------------------------------------------------------";
 echo "     Yearly TOTAL:                    $ $yeartotalrnd";
 echo "---------------------------------------------------------";
 

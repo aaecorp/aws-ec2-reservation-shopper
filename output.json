@@ -1,64 +1,84 @@
 {
     "ReservedInstancesOfferings": [
         {
-            "OfferingType": "All Upfront", 
+            "OfferingType": "Partial Upfront", 
             "AvailabilityZone": "us-east-1e", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Windows (Amazon VPC)", 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [], 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.172, 
+                    "Frequency": "Hourly"
+                }
+            ], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 3218.0, 
+            "FixedPrice": 1506.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "536df3e0-f549-453a-be3f-459cb7767c88", 
-            "InstanceType": "r3.xlarge"
+            "ReservedInstancesOfferingId": "970b7c37-cb06-4957-80ea-6cc66a5b6c8f", 
+            "InstanceType": "d2.xlarge"
         }, 
         {
-            "OfferingType": "All Upfront", 
+            "OfferingType": "Partial Upfront", 
             "AvailabilityZone": "us-east-1c", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Windows (Amazon VPC)", 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [], 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.172, 
+                    "Frequency": "Hourly"
+                }
+            ], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 3218.0, 
+            "FixedPrice": 1506.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "2141ec86-9c1f-49ec-94a8-54787c77e6cf", 
-            "InstanceType": "r3.xlarge"
+            "ReservedInstancesOfferingId": "cf278b24-7694-4097-b3ca-7c999224ec73", 
+            "InstanceType": "d2.xlarge"
         }, 
         {
-            "OfferingType": "All Upfront", 
+            "OfferingType": "Partial Upfront", 
             "AvailabilityZone": "us-east-1a", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Windows (Amazon VPC)", 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [], 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.172, 
+                    "Frequency": "Hourly"
+                }
+            ], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 3218.0, 
+            "FixedPrice": 1506.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "db2dd43c-1e4e-476b-8034-d1e699a67f08", 
-            "InstanceType": "r3.xlarge"
+            "ReservedInstancesOfferingId": "53d58952-2c2d-4559-b9e6-2c749b7b1855", 
+            "InstanceType": "d2.xlarge"
         }, 
         {
-            "OfferingType": "All Upfront", 
+            "OfferingType": "Partial Upfront", 
             "AvailabilityZone": "us-east-1b", 
             "InstanceTenancy": "default", 
             "PricingDetails": [], 
-            "ProductDescription": "Windows (Amazon VPC)", 
+            "ProductDescription": "Linux/UNIX (Amazon VPC)", 
             "UsagePrice": 0.0, 
-            "RecurringCharges": [], 
+            "RecurringCharges": [
+                {
+                    "Amount": 0.172, 
+                    "Frequency": "Hourly"
+                }
+            ], 
             "Marketplace": false, 
             "CurrencyCode": "USD", 
-            "FixedPrice": 3218.0, 
+            "FixedPrice": 1506.0, 
             "Duration": 31536000, 
-            "ReservedInstancesOfferingId": "4bb0a1ed-ce2d-4475-a56e-626d28950ce4", 
-            "InstanceType": "r3.xlarge"
+            "ReservedInstancesOfferingId": "0ebefe92-9894-4b4a-b959-1abc89b18152", 
+            "InstanceType": "d2.xlarge"
         }
     ]
 }
