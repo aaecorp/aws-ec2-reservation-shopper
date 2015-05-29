@@ -41,9 +41,18 @@ echo "        2. Windows"
 read ostype
 echo ""
 echo "    What instance type do you want to reserve? (Enter m3.medium, r3.xlarge, etc., then press [ENTER]):"
-echo "        1. m3.medium"
-echo "        2. m3.large"
-echo "        3. m3.xlarge"
+echo "        1. t2.micro"
+echo "        2. t2.small"
+echo "        3. t2.medium"
+echo "        4. m3.medium"
+echo "        5. m3.large"
+echo "        6. m3.xlarge"
+echo "        7. c3.medium"
+echo "        8. c3.large"
+echo "        9. c3.xlarge"
+echo "        10. r3.medium"
+echo "        11. r3.large"
+echo "        12. r3.xlarge"
 read instancetype
 echo ""
 echo "    What reservation type would you like to purchase? (Enter 'No Upfront', 'Partial Upfront' or 'All Upfront' and then press [ENTER]):"
@@ -77,11 +86,29 @@ elif [ $length -eq 3 ]; then
 fi
 
 if [ $instancetype -eq 1 ]; then
-    instancetypesel="m3.medium"
+    instancetypesel="t2.micro"
 elif [ $instancetype -eq 2 ]; then
-    instancetypesel="m3.large"
+    instancetypesel="t2.small"
 elif [ $instancetype -eq 3 ]; then
+    instancetypesel="t2.medium"
+elif [ $instancetype -eq 4 ]; then
+    instancetypesel="m3.large"
+elif [ $instancetype -eq 5 ]; then
     instancetypesel="m3.xlarge"
+elif [ $instancetype -eq 6 ]; then
+    instancetypesel="m3.large"
+elif [ $instancetype -eq 7 ]; then
+    instancetypesel="c3.xlarge"
+elif [ $instancetype -eq 8 ]; then
+    instancetypesel="c3.large"
+elif [ $instancetype -eq 9 ]; then
+    instancetypesel="c3.xlarge"
+elif [ $instancetype -eq 10 ]; then
+    instancetypesel="r3.medium"
+elif [ $instancetype -eq 11 ]; then
+    instancetypesel="r3.xlarge"
+elif [ $instancetype -eq 12 ]; then
+    instancetypesel="r3.xlarge"
 fi
 
 if [ $restype -eq 1 ]; then
