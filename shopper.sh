@@ -33,12 +33,12 @@ echo "    What AWS region do you want to search for reservations in? (Enter 1-3 
 echo "        1. US-East-1"
 echo "        2. US-West-1"
 echo "        3. US-West-2"
-read region
+read -s region
 echo ""
 echo "    What OS do you want to reserve an instance for? (Enter 1 or 2, then press [ENTER]):"
 echo "        1. Linux/Unix"
 echo "        2. Windows"
-read ostype
+read -s ostype
 echo ""
 echo "    What instance type do you want to reserve? (Enter a type with no spaces then press [ENTER]):"
 echo "    Some examples are:"
@@ -52,16 +52,16 @@ echo "        c3.large                                     i2.xlarge"
 echo "        c3.xlarge                                    i2.2xlarge"
 echo "        c3.2xlarge                                   d2.xlarge"
 echo "        c3.4xlarge                                   d2.2xlarge"
-read instancetype
+read -s instancetype
 echo ""
 echo "    What reservation type would you like to purchase? (Enter 1-3 and then press [ENTER]):"
 echo "        1. No Upfront"
 echo "        2. Partial Upfront"
 echo "        3. All Upfront"
-read restype
+read -s restype
 echo ""
 echo "    Do you want a 1 or 3-year reservation? (Enter 1 or 3 then press [ENTER]):"
-read length
+read -s length
 
 # Parse some things
 if [ $region -eq 1 ]; then
