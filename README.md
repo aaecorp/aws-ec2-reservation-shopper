@@ -6,3 +6,4 @@ This tool was written since the AWS EC2 pricing page http://aws.amazon.com/ec2/p
 
 ## To use
 Install the .sh script wherever you like. Make sure it executable, then ./shopper.sh to execute.
+
